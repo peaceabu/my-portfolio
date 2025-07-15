@@ -42,10 +42,10 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/peaceabu" target="_blank" rel="noopener noreferrer">
           <FaGithub className="hover:text-gray-300 transition" />
         </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+        <a href="https://linkedin.com/in/abupps" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="hover:text-gray-300 transition" />
         </a>
       </motion.div>
