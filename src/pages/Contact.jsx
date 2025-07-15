@@ -11,32 +11,32 @@ function Contact() {
           <li>
             Email:{' '}
             <a
-              href="mailto:you@example.com"
+              href="mailto:peacaebu333@gmail.com"
               className="underline hover:text-pink-300"
             >
-              you@example.com
+              peaceabu333@gmail.com
             </a>
           </li>
           <li>
             LinkedIn:{' '}
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/abupps"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-pink-300"
             >
-              linkedin.com/in/yourusername
+              linkedin.com/in/abupps
             </a>
           </li>
           <li>
             GitHub:{' '}
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/peaceabu"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-pink-300"
             >
-              github.com/yourusername
+              github.com/peaceabu
             </a>
           </li>
         </ul>

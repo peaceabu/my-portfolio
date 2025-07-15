@@ -65,7 +65,7 @@ function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-16 left-0 right-0 bg-white/10 backdrop-blur-md text-green z-40 flex flex-col items-center space-y-6 p-6 md:hidden"
+            className="fixed top-16 left-0 right-0 bg-green/10 backdrop-blur-md text-green z-40 flex flex-col items-center space-y-6 p-6 md:hidden"
           >
             {navItems.map((item) => (
               <Link
