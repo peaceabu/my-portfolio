@@ -21,7 +21,7 @@ export default function Hero() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        I build beautiful, fast, and accessible web applications using React and modern technologies.
+        I build beautiful, fastest, and accessible web applications using React and modern technologies.
       </motion.p>
 
       {/* Call-to-Action Button */}
