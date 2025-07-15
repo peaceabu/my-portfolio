@@ -27,7 +27,7 @@ export default function Hero() {
       {/* Call-to-Action Button */}
       <motion.a
         href="#projects"
-        className="inline-block bg-white text-indigo-700 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-100 transition"
+        className="inline-block bg-black text-indigo-700 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-100 transition"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
