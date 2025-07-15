@@ -1,0 +1,48 @@
+import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+function Navbar() {
+  const { pathname } = useLocation();
+
+  const navItems = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Contact', path: '/contact' },
+  ];
+
+  return (
+    <motion.nav
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/10 shadow-sm"
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
+        <div className="text-2xl font-bold tracking-wide">PeaceAbu</div>
+
+        <div className="space-x-6 hidden md:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`relative hover:text-pink-400 transition duration-300 ${
+                pathname === item.path ? 'text-pink-400' : ''
+              }`}
+            >
+              {item.label}
+              {pathname === item.path && (
+                <motion.span
+                  layoutId="underline"
+                  className="absolute left-0 -bottom-1 h-[2px] w-full bg-pink-400 rounded"
+                />
+              )}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </motion.nav>
+  );
+}
+
+export default Navbar;
