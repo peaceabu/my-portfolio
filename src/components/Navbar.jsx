@@ -22,7 +22,7 @@ function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/10 shadow-sm"
+        className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10 shadow-sm"
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
           <div className="text-2xl font-bold tracking-wide">PeaceAbu</div>

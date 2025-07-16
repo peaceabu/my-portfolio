@@ -3,7 +3,7 @@ import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Contact() {
   return (
-    <section
+<section
       id="contact"
       className="
         min-h-screen pt-20 px-6 py-12
@@ -11,6 +11,8 @@ function Contact() {
         text-white flex items-center justify-center
       "
     >
+
+
       <div className="max-w-3xl w-full text-center space-y-10">
         <motion.h1
           className="text-4xl font-extrabold"
