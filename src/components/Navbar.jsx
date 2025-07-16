@@ -79,20 +79,34 @@ function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-16 left-0 right-0 bg-green/10 backdrop-blur-md text-green z-40 flex flex-col items-center space-y-6 p-6 md:hidden"
+            className="fixed top-16 left-0 right-0 bg-black/80 backdrop-blur-lg text-white z-40 flex flex-col items-center space-y-6 p-6 md:hidden"
           >
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className={`hover:text-pink-400 transition duration-300 ${
-                  pathname === item.path ? 'text-pink-400' : ''
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.label === 'Resume' ? (
+                <a
+                  key={item.path}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="hover:text-pink-400 transition duration-300"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`hover:text-pink-400 transition duration-300 ${
+                    pathname === item.path ? 'text-pink-400' : ''
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
+
           </motion.div>
         )}
       </AnimatePresence>

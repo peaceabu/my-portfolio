@@ -110,7 +110,7 @@ export default function Hero() {
           alt="PeaceAbu"
           className="
             rounded-[40%] 
-            w-48 sm:w-64 md:w-100
+            w-65 sm:w-64 md:w-100
             object-cover shadow-lg
           "
           style={{ borderRadius: '30% 50% 70% 30% / 60% 30% 70% 40%' }}

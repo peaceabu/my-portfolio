@@ -51,7 +51,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen pt-20 px-6 py-12 bg-gradient-to-br text-white overflow-hidden"
+      className="relative min-h-screen pt-20 px-6 pb-28 bg-gradient-to-br text-white overflow-hidden"
       style={{
         background: "linear-gradient(to right,  #000428, #004e92)",
       }}
@@ -69,7 +69,6 @@ function Projects() {
 
       {/* Content Container with higher z-index */}
       <div className="relative z-10">
-        {/* Your header */}
         <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
           Featured Projects
         </h1>
@@ -82,7 +81,7 @@ function Projects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white bg-opacity-90 hover:bg-opacity-100 hover:scale-105 transition-all duration-300 rounded-2xl overflow-hidden shadow-lg flex flex-col relative z-20"
+              className="bg-stone-300 bg-opacity-90 hover:bg-opacity-100 hover:scale-105 transition-all duration-300 rounded-2xl overflow-hidden shadow-lg flex flex-col relative z-20"
             >
               <img
                 src={project.img}
@@ -110,19 +109,19 @@ function Projects() {
             </motion.div>
           ))}
         </div>
-
-        {/* Scroll to AboutMe Arrow */}
-        <motion.div
-          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-white text-3xl sm:text-4xl z-30"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-        >
-          <a href="#AboutMe" aria-label="Scroll to About Me">
-            <FaArrowDown />
-          </a>
-        </motion.div>
       </div>
+
+      {/* Scroll to AboutMe Arrow */}
+      <motion.div
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-white text-3xl sm:text-4xl z-30"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+      >
+        <a href="#AboutMe" aria-label="Scroll to About Me">
+          <FaArrowDown />
+        </a>
+      </motion.div>
     </section>
   );
 }
