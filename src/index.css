@@ -31,13 +31,31 @@ a:hover {
   color: #000000;
 }
 
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-} */
+body {
+  --cursor-x: 50vw;
+  --cursor-y: 50vh;
+  background: radial-gradient(
+    circle at var(--cursor-x) var(--cursor-y),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.9)
+  );
+  transition: background 0.05s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.torchlight-layer {
+  background: radial-gradient(
+    circle at var(--cursor-x, 50vw) var(--cursor-y, 50vh),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.95)
+  );
+  transition: background 0.1s ease;
+  z-index: -10;
+}
+
+
 
 h1 {
   font-size: 3.2em;

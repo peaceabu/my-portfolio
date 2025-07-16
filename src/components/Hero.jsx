@@ -1,29 +1,110 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
 
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim'; // Use loadSlim instead of loadFull
+import { useCallback, useEffect, useState } from 'react';
+
 export default function Hero() {
+  const [init, setInit] = useState(false);
+
+  // Initialize particles engine
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine); // Use loadSlim for better performance
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    console.log(container);
+  }, []);
+
   return (
     <section
-  className="pt-20 
-    w-full min-h-screen
-    flex flex-col md:flex-row
+  className="
+    pt-20 w-full min-h-screen
+    flex flex-col-reverse md:flex-row
     justify-center items-center
     text-white px-6 py-12
     text-center md:text-left
-    relative
+    relative overflow-hidden
   "
   style={{
-    // background: 'linear-gradient(to right, #24243e, #302b63, #0f0c29)'
-    background: 'linear-gradient(to right, #004e92, #000428)'
-  }}
+  background: 'linear-gradient(to right, rgba(0, 78, 146, 0.8), rgba(0, 4, 40, 0.8))'
+}}
+
 >
 
-
+      {/* 🔵 Particles Background */}
+      {init && (
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          className="absolute top-0 left-0 w-full h-full -z-10"
+          options={{
+            background: {
+              color: 'transparent'
+            },
+            fpsLimit: 60,
+            interactivity: {
+              events: {
+                onHover: {
+                  enable: true,
+                  mode: 'repulse'
+                },
+                resize: true
+              },
+              modes: {
+                repulse: {
+                  distance: 100,
+                  duration: 0.4
+                }
+              }
+            },
+            particles: {
+              color: { value: '#ffffff' },
+              links: {
+                color: '#fffffff',
+                distance: 150,
+                enable: true,
+                opacity: 0.6,
+                width: 1.5
+              },
+              move: {
+                enable: true,
+                speed: 1,
+                direction: 'none',
+                outModes: {
+                  default: 'bounce'
+                }
+              },
+              number: {
+                value: 70,
+                density: {
+                  enable: true,
+                  area: 800
+                }
+              },
+              opacity: {
+                value: 0.7
+              },
+              shape: {
+                type: 'circle'
+              },
+              size: {
+                value: { min: 1, max: 3 }
+              }
+            },
+            detectRetina: true
+          }}
+        />
+      )}
 
       {/* Left content */}
-      <div className="md:w-1/2 space-y-6 max-w-lg">
+      <div className="md:w-1/2 space-y-6 max-w-lg z-10">
         <motion.h1
-        
           className="text-xl sm:text-2xl md:text-6xl font-extrabold"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -76,14 +157,14 @@ export default function Hero() {
         className="
           md:w-1/2 mt-10 md:mt-0
           flex justify-center
-          max-w-xs sm:max-w-md md:max-w-full
+          max-w-xs sm:max-w-md md:max-w-full z-10
         "
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1 }}
       >
         <img
-          src="/myself_favicon1.png" // your image path here
+          src="/myself_favicon.png"
           alt="PeaceAbu"
           className="
             rounded-[40%] 
@@ -99,7 +180,7 @@ export default function Hero() {
         className="
           absolute bottom-6
           left-1/2 transform -translate-x-1/2
-          animate-bounce text-white text-3xl sm:text-4xl
+          animate-bounce text-white text-3xl sm:text-4xl z-10
         "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
