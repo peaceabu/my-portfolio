@@ -17,11 +17,16 @@ export default function Footer() {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
       className="
-        bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600
+        bg-gradient-to-br 
         text-white
         px-6 pt-12 pb-8
         border-t border-white/20
       "
+
+      style={{
+    // background: 'linear-gradient(to right, #24243e, #302b63, #0f0c29)'
+    background: 'linear-gradient(to right, #004e92, #000428)'
+  }}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center space-y-8 text-center">
         {/* Logo / Brand */}

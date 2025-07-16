@@ -4,16 +4,22 @@ import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
 export default function Hero() {
   return (
     <section
-      className="pt-20 
-        w-full min-h-screen
-        flex flex-col md:flex-row
-        justify-center items-center
-        bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600
-        text-white px-6 py-12
-        text-center md:text-left
-        relative
-      "
-    >
+  className="pt-20 
+    w-full min-h-screen
+    flex flex-col md:flex-row
+    justify-center items-center
+    text-white px-6 py-12
+    text-center md:text-left
+    relative
+  "
+  style={{
+    // background: 'linear-gradient(to right, #24243e, #302b63, #0f0c29)'
+    background: 'linear-gradient(to right, #004e92, #000428)'
+  }}
+>
+
+
+
       {/* Left content */}
       <div className="md:w-1/2 space-y-6 max-w-lg">
         <motion.h1
@@ -77,7 +83,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 1 }}
       >
         <img
-          src="/myself_favicon.png" // your image path here
+          src="/myself_favicon1.png" // your image path here
           alt="PeaceAbu"
           className="
             rounded-[40%] 

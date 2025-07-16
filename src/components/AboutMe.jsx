@@ -10,10 +10,15 @@ function AboutMe() {
       id="AboutMe"
       className="
         min-h-screen pt-20 px-6 py-12
-        bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600
+        bg-gradient-to-br
         text-white
         flex flex-col justify-center items-center text-center
       "
+
+      style={{
+    // background: 'linear-gradient(to right, #24243e, #302b63, #0f0c29)'
+    background: 'linear-gradient(to right, #004e92, #000428)'
+  }}
     >
       <div className="max-w-4xl space-y-10">
         <h1 className="text-4xl font-bold">About Me</h1>

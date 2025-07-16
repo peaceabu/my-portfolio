@@ -26,7 +26,12 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen pt-20 px-6 py-12 bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 text-white"
+      className="relative min-h-screen pt-20 px-6 py-12 bg-gradient-to-br text-white"
+
+      style={{
+    // background: 'linear-gradient(to right, #24243e, #302b63, #0f0c29)'
+    background: 'linear-gradient(to right, #004e92, #000428)'
+  }}
     >
       <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
         Featured Projects

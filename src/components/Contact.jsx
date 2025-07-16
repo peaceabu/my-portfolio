@@ -7,9 +7,14 @@ function Contact() {
       id="contact"
       className="
         min-h-screen pt-20 px-6 py-12
-        bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600
+        bg-gradient-to-br
         text-white flex items-center justify-center
       "
+
+      style={{
+    // background: 'linear-gradient(to right, #24243e, #302b63, #0f0c29)'
+    background: 'linear-gradient(to right, #004e92, #000428)'
+  }}
     >
 
 
