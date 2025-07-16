@@ -77,7 +77,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 1 }}
       >
         <img
-          src="/myself_favicon.png" // your image path here
+          src="/myself_favicon12.png" // your image path here
           alt="PeaceAbu"
           className="
             rounded-[40%] 
