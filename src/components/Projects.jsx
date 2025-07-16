@@ -23,6 +23,12 @@ function Projects() {
       link: 'https://tickettimer.netlify.app',
       img: '/images/tickettimer.png', // Add this to your public folder
     },
+      {
+      title: 'IwayShopper',
+      description: 'A Complete E-Commerce site build with WordPress from scratch to payment Gateway. End-to-End solutions',
+      link: 'https://iwayshopper.in',
+      img: '/images/iwayshopper_png.png', // Add this to your public folder
+    },
   ];
 
   return (
