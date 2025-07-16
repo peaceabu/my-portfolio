@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
+
 function Projects() {
   const projects = [
     {
@@ -18,7 +21,12 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="min-h-screen pt-20 px-6 py-12 bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 text-white">      
+    <section
+  id="projects"
+  className="relative min-h-screen pt-20 px-6 py-12 bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 text-white"
+>
+   
+     
       <h1 className="text-4xl font-bold text-center mb-12">Projects</h1>
 
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -36,8 +44,23 @@ function Projects() {
             <span className="text-blue-600 mt-3 inline-block">View Project →</span>
           </a>
         ))}
+
       </div>
+
+<motion.div
+  className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-white text-2xl"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1.2 }}
+>
+  <a href="#AboutMe">
+    <FaArrowDown />
+  </a>
+</motion.div>
+
     </section>
+    
+    
   );
 }
 

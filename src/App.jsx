@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import Home from './pages/Home'; // make sure this file exists and returns JSX
+import About from './components/AboutMe';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 
 function App() {

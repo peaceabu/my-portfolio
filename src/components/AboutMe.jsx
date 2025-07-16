@@ -1,8 +1,8 @@
-function About() {
+function AboutMe() {
   return (
-    <section className="min-h-screen pt-20 px-6 py-12 bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 text-white">
+    <section id="AboutMe" className="min-h-screen pt-20 px-6 py-12 bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 text-white">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">About Me</h1>
+        <h1 className="text-2xl font-bold mb-6">About Me</h1>
         <p className="mb-4 text-lg">
           Hello! I'm a passionate web developer with experience in building modern web applications using React, JavaScript, and other technologies.
         </p>
@@ -14,4 +14,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutMe;
