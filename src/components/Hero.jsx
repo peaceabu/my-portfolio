@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim'; // Use loadSlim instead of loadFull
 import { useCallback, useEffect, useState } from 'react';
+import particlesConfig from '../hooks/particlesConfig';
 
 export default function Hero() {
   const [init, setInit] = useState(false);
@@ -39,67 +40,8 @@ export default function Hero() {
 
       {/* 🔵 Particles Background */}
       {init && (
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          className="absolute top-0 left-0 w-full h-full -z-10"
-          options={{
-            background: {
-              color: 'transparent'
-            },
-            fpsLimit: 60,
-            interactivity: {
-              events: {
-                onHover: {
-                  enable: true,
-                  mode: 'repulse'
-                },
-                resize: true
-              },
-              modes: {
-                repulse: {
-                  distance: 100,
-                  duration: 0.4
-                }
-              }
-            },
-            particles: {
-              color: { value: '#ffffff' },
-              links: {
-                color: '#fffffff',
-                distance: 150,
-                enable: true,
-                opacity: 0.6,
-                width: 1.5
-              },
-              move: {
-                enable: true,
-                speed: 1,
-                direction: 'none',
-                outModes: {
-                  default: 'bounce'
-                }
-              },
-              number: {
-                value: 70,
-                density: {
-                  enable: true,
-                  area: 800
-                }
-              },
-              opacity: {
-                value: 0.7
-              },
-              shape: {
-                type: 'circle'
-              },
-              size: {
-                value: { min: 1, max: 3 }
-              }
-            },
-            detectRetina: true
-          }}
-        />
+        <Particles id="tsparticles" options={particlesConfig} />
+
       )}
 
       {/* Left content */}
@@ -168,10 +110,10 @@ export default function Hero() {
           alt="PeaceAbu"
           className="
             rounded-[40%] 
-            w-48 sm:w-64 md:w-80
+            w-48 sm:w-64 md:w-100
             object-cover shadow-lg
           "
-          style={{ borderRadius: '40% 60% 70% 30% / 60% 30% 70% 40%' }}
+          style={{ borderRadius: '30% 50% 70% 30% / 60% 30% 70% 40%' }}
         />
       </motion.div>
 

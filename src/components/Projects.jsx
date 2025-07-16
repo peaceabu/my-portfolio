@@ -1,5 +1,7 @@
-import { motion } from 'framer-motion';
-import { FaArrowDown } from 'react-icons/fa';
+import Particles from "react-tsparticles";
+import particlesConfig from "../hooks/particlesConfig";
+import { motion } from "framer-motion";
+import { FaArrowDown } from "react-icons/fa";
 
 function Projects() {
   const projects = [
@@ -26,24 +28,28 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen pt-20 px-6 py-12 bg-gradient-to-br text-white"
-
+      className="relative min-h-screen pt-20 px-6 py-12 bg-gradient-to-br text-white overflow-hidden"
       style={{
-    // background: 'linear-gradient(to right, #24243e, #302b63, #0f0c29)'
-    background: 'linear-gradient(to right, #004e92, #000428)'
-  }}
+        background: "linear-gradient(to right, #004e92, #000428)",
+      }}
     >
+      {/* Particles background */}
+      <Particles
+        id="tsparticles"
+        options={particlesConfig}
+        className="absolute top-0 left-0 w-full h-full -z-10"
+      />
+
+      {/* Your header */}
       <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
         Featured Projects
       </h1>
 
+      {/* Projects Grid */}
       <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {projects.map((project, index) => (
-          <motion.a
+          <motion.div
             key={index}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -57,13 +63,22 @@ function Projects() {
             <div className="p-6 flex flex-col flex-1 justify-between text-gray-800">
               <div>
                 <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-                <p className="text-gray-700 text-sm sm:text-base">{project.description}</p>
+                <p className="text-gray-700 text-sm sm:text-base">
+                  {project.description}
+                </p>
               </div>
-              <span className="text-indigo-700 font-semibold mt-4 inline-block">
-                View Project →
-              </span>
+              <div className="mt-4 flex justify-end">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-5 py-2 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition"
+                >
+                  View Project
+                </a>
+              </div>
             </div>
-          </motion.a>
+          </motion.div>
         ))}
       </div>
 
