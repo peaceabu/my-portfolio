@@ -1,24 +1,44 @@
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
+import { useCallback, useEffect, useState } from 'react';
+import particlesConfig from '../hooks/particlesConfig';
 
 function Contact() {
+  const [init, setInit] = useState(false);
+
+  // Initialize particles engine
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    console.log(container);
+  }, []);
+
   return (
-<section
+    <section
       id="contact"
-      className="
-        min-h-screen pt-20 px-6 py-12
-        bg-gradient-to-br
-        text-white flex items-center justify-center
-      "
-
+      className="min-h-screen pt-20 px-6 py-12 relative text-white flex items-center justify-center"
       style={{
-    // background: 'linear-gradient(to right, #24243e, #302b63, #0f0c29)'
-    background: 'linear-gradient(to right, #004e92, #000428)'
-  }}
+        background: "linear-gradient(to right,  #000428, #004e92)",
+      }}
     >
+      {/* 🔵 Particles Background */}
+      {init && (
+        <Particles 
+          id="tsparticles-contact" 
+          options={particlesConfig}
+          particlesLoaded={particlesLoaded}
+        />
+      )}
 
-
-      <div className="max-w-3xl w-full text-center space-y-10">
+      <div className="max-w-3xl w-full text-center space-y-10 z-10">
         <motion.h1
           className="text-4xl font-extrabold"
           initial={{ opacity: 0, y: -30 }}

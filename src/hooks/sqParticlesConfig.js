@@ -96,7 +96,7 @@ const particlesConfig = {
       }
     },
     shape: {
-      type: 'circle'
+      type: 'square'
     }
   },
   pauseOnBlur: true,

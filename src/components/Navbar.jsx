@@ -12,6 +12,7 @@ function Navbar() {
     { label: 'About', path: '/about' },
     { label: 'Projects', path: '/projects' },
     { label: 'Contact', path: '/contact' },
+    { label: 'Resume', path: '/doc/AbuRes_030225.pdf'}
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -29,23 +30,36 @@ function Navbar() {
 
           {/* Desktop Links */}
           <div className="space-x-6 hidden md:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`relative hover:text-pink-400 transition duration-300 ${
-                  pathname === item.path ? 'text-pink-400' : ''
-                }`}
-              >
-                {item.label}
-                {pathname === item.path && (
-                  <motion.span
-                    layoutId="underline"
-                    className="absolute left-0 -bottom-1 h-[2px] w-full bg-pink-400 rounded"
-                  />
-                )}
-              </Link>
-            ))}
+{navItems.map((item) =>
+  item.label === 'Resume' ? (
+    <a
+      key={item.path}
+      href={item.path}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-pink-400 transition duration-300"
+    >
+      {item.label}
+    </a>
+  ) : (
+    <Link
+      key={item.path}
+      to={item.path}
+      className={`relative hover:text-pink-400 transition duration-300 ${
+        pathname === item.path ? 'text-pink-400' : ''
+      }`}
+    >
+      {item.label}
+      {pathname === item.path && (
+        <motion.span
+          layoutId="underline"
+          className="absolute left-0 -bottom-1 h-[2px] w-full bg-pink-400 rounded"
+        />
+      )}
+    </Link>
+  )
+)}
+
           </div>
 
           {/* Mobile Hamburger */}
