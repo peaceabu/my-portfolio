@@ -145,7 +145,7 @@ const projects = [
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
-        <a href="contact" aria-label="Scroll to About Me">
+        <a href="#contact" aria-label="Scroll to About Me">
           <FaArrowDown />
         </a>
       </motion.div>
