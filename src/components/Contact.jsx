@@ -1,117 +1,248 @@
-import { motion } from 'framer-motion';
-import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';
-import { useCallback, useEffect, useState } from 'react';
-import particlesConfig from '../hooks/particlesConfig';
+import { useState } from 'react';
+import { Mail, User, MessageSquare, Send, Check, Github, Linkedin, ExternalLink } from 'lucide-react';
 
 function Contact() {
-  const [init, setInit] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [focusedField, setFocusedField] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Initialize particles engine
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
     });
-  }, []);
+  };
 
-  const particlesLoaded = useCallback(async (container) => {
-    console.log(container);
-  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      
+      // Create mailto link with form data
+      const subject = `Message from ${formData.name}`;
+      const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+      const mailtoLink = `mailto:peaceabu333@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.location.href = mailtoLink;
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: '', email: '', message: '' });
+      }, 3000);
+    }, 1000);
+  };
+
+  const socialLinks = [
+    {
+      icon: Github,
+      label: 'GitHub',
+      href: 'https://github.com/peaceabu',
+      color: 'hover:text-gray-300'
+    },
+    {
+      icon: Linkedin,
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/in/abupps',
+      color: 'hover:text-blue-400'
+    },
+    {
+      icon: Mail,
+      label: 'Email',
+      href: 'mailto:peaceabu333@gmail.com',
+      color: 'hover:text-pink-400'
+    }
+  ];
+
+  const inputFields = [
+    {
+      name: 'name',
+      label: 'Full Name',
+      type: 'text',
+      icon: User,
+      placeholder: 'John Doe'
+    },
+    {
+      name: 'email',
+      label: 'Email Address',
+      type: 'email',
+      icon: Mail,
+      placeholder: 'john@example.com'
+    }
+  ];
 
   return (
-    <section
-      id="contact"
-      className="min-h-screen pt-20 px-6 py-12 relative text-white flex items-center justify-center"
+    <section 
+      id='contact' 
+      className="min-h-screen flex items-center justify-center p-4 text-white relative overflow-hidden"
       style={{
-        background: "linear-gradient(to right,  #000428, #004e92)",
+        background: 'radial-gradient(circle,rgba(1, 28, 74, 1) 12%, rgba(4, 37, 94, 1) 36%, rgba(0, 18, 74, 1) 76%)'
       }}
     >
-      {/* 🔵 Particles Background */}
-      {init && (
-        <Particles 
-          id="tsparticles-contact" 
-          options={particlesConfig}
-          particlesLoaded={particlesLoaded}
-        />
-      )}
-
-      <div className="max-w-3xl w-full text-center space-y-10 z-10">
-        <motion.h1
-          className="text-4xl font-extrabold"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Let's Connect
-        </motion.h1>
-
-        <motion.p
-          className="text-lg"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Whether you have a project in mind or just want to say hi, my inbox is always open. I'll try my best to get back to you!
-        </motion.p>
-
-        <motion.div
-          className="space-y-6 text-left sm:text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div className="flex items-center justify-center gap-4 text-xl">
-            <FaEnvelope className="text-pink-300" />
-            <a
-              href="mailto:peaceabu333@gmail.com"
-              className="hover:underline hover:text-pink-200 transition"
-            >
-              peaceabu333@gmail.com
-            </a>
+      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Left Column - Info */}
+        <div className="space-y-8">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20">
+              <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-pink-400">Available for work</span>
+            </div>
+            
+            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Let's create something
+              <span className="block text-transparent bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text">
+                amazing together
+              </span>
+            </h1>
+            
+            <p className="text-xl text-blue-100 leading-relaxed max-w-lg">
+              I'm always excited to discuss new projects, creative ideas, or opportunities to be part of your vision.
+            </p>
           </div>
 
-          <div className="flex items-center justify-center gap-4 text-xl">
-            <FaLinkedin className="text-blue-300" />
-            <a
-              href="https://linkedin.com/in/abupps"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline hover:text-pink-200 transition"
-            >
-              linkedin.com/in/abupps
-            </a>
+          {/* Social Links */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Connect with me</h3>
+            <div className="flex gap-4">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group flex items-center gap-3 px-4 py-3 rounded-xl bg-black/30 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300 hover:bg-black/50 ${social.color}`}
+                  >
+                    <Icon className="w-5 h-5 text-blue-200 group-hover:scale-110 transition-transform duration-300" />
+                    <span className="text-sm font-medium text-blue-100 group-hover:text-white transition-colors">
+                      {social.label}
+                    </span>
+                    <ExternalLink className="w-4 h-4 text-blue-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="flex items-center justify-center gap-4 text-xl">
-            <FaGithub className="text-gray-300" />
-            <a
-              href="https://github.com/peaceabu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline hover:text-pink-200 transition"
-            >
-              github.com/peaceabu
-            </a>
+          {/* Quick Info */}
+          <div className="p-6 rounded-2xl bg-black/20 border border-indigo-500/30">
+            <h3 className="text-lg font-semibold text-white mb-3">Quick Response</h3>
+            <p className="text-blue-100 text-sm">
+              I typically respond to messages within 24 hours. For urgent inquiries, feel free to reach out via email directly.
+            </p>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Optional CTA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-10"
-        >
-          <a
-            href="mailto:peaceabu333@gmail.com"
-            className="inline-block bg-black text-indigo-300 px-6 py-3 rounded-lg shadow-md hover:bg-indigo-100 hover:text-black transition text-sm sm:text-base font-semibold"
-          >
-            Send a Message
-          </a>
-        </motion.div>
+        {/* Right Column - Form */}
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-3xl blur-xl"></div>
+          
+          <div className="relative bg-black/30 backdrop-blur-sm border border-indigo-500/30 rounded-2xl p-8">
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-white mb-2">Send a Message</h2>
+              <p className="text-blue-200">Tell me about your project or just say hello!</p>
+            </div>
+
+            <div className="space-y-6">
+              {/* Name and Email Fields */}
+              <div className="grid md:grid-cols-2 gap-4">
+                {inputFields.map((field) => {
+                  const Icon = field.icon;
+                  return (
+                    <div key={field.name} className="relative">
+                      <label className="block text-sm font-medium text-blue-100 mb-2">
+                        {field.label}
+                      </label>
+                      <div className="relative">
+                        <Icon className={`absolute left-3 top-3.5 w-5 h-5 transition-colors duration-300 ${
+                          focusedField === field.name ? 'text-pink-400' : 'text-blue-300'
+                        }`} />
+                        <input
+                          type={field.type}
+                          name={field.name}
+                          value={formData[field.name]}
+                          onChange={handleChange}
+                          onFocus={() => setFocusedField(field.name)}
+                          onBlur={() => setFocusedField('')}
+                          placeholder={field.placeholder}
+                          required
+                          className={`w-full pl-12 pr-4 py-3.5 bg-black/40 border rounded-xl text-white placeholder-blue-300 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-500/50 focus:border-pink-500/50 ${
+                            focusedField === field.name ? 'border-pink-500/50' : 'border-indigo-500/40'
+                          }`}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Message Field */}
+              <div className="relative">
+                <label className="block text-sm font-medium text-blue-100 mb-2">
+                  Message
+                </label>
+                <div className="relative">
+                  <MessageSquare className={`absolute left-3 top-3.5 w-5 h-5 transition-colors duration-300 ${
+                    focusedField === 'message' ? 'text-pink-400' : 'text-blue-300'
+                  }`} />
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    onFocus={() => setFocusedField('message')}
+                    onBlur={() => setFocusedField('')}
+                    placeholder="Tell me about your project, ideas, or just say hello..."
+                    required
+                    rows={4}
+                    className={`w-full pl-12 pr-4 py-3.5 bg-black/40 border rounded-xl text-white placeholder-blue-300 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-500/50 focus:border-pink-500/50 resize-none ${
+                      focusedField === 'message' ? 'border-pink-500/50' : 'border-indigo-500/40'
+                    }`}
+                  />
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                disabled={isSubmitting || isSubmitted}
+                className={`w-full py-4 px-6 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center gap-3 ${
+                  isSubmitted 
+                    ? 'bg-pink-500 hover:bg-pink-600' 
+                    : 'bg-black hover:bg-indigo-600 border border-indigo-500/50 hover:border-indigo-400 hover:shadow-lg hover:shadow-indigo-500/25'
+                } disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95`}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    Sending...
+                  </>
+                ) : isSubmitted ? (
+                  <>
+                    <Check className="w-5 h-5" />
+                    Message Sent!
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

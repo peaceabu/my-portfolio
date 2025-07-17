@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
-
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim'; // Use loadSlim instead of loadFull
+import { loadSlim } from '@tsparticles/slim';
 import { useCallback, useEffect, useState } from 'react';
+import { Typewriter } from 'react-simple-typewriter'; // ✅ Import Typewriter
 import particlesConfig from '../hooks/particlesConfig';
 
 export default function Hero() {
@@ -12,7 +12,7 @@ export default function Hero() {
   // Initialize particles engine
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine); // Use loadSlim for better performance
+      await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
@@ -23,25 +23,23 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
-  className="
-    pt-20 w-full min-h-screen
-    flex flex-col-reverse md:flex-row
-    justify-center items-center
-    text-white px-6 py-12
-    text-center md:text-left
-    relative overflow-hidden
-  "
-  style={{
-  background: 'linear-gradient(to right, rgba(0, 78, 146, 0.8), rgba(0, 4, 40, 0.8))'
-}}
-
->
-
+    <section id='home'
+      className="
+        pt-20 w-full min-h-screen
+        flex flex-col-reverse md:flex-row
+        justify-center items-center
+        text-white px-6 py-12
+        text-center md:text-left
+        relative overflow-hidden
+      "
+      style={{
+        // background: 'linear-gradient(to right, rgba(0, 4, 40, 0.8),rgba(2, 90, 200, 0.9))'
+        background: 'radial-gradient(circle,rgba(1, 28, 74, 1) 12%, rgba(4, 37, 94, 1) 36%, rgba(0, 18, 74, 1) 76%)'
+      }}
+    >
       {/* 🔵 Particles Background */}
       {init && (
         <Particles id="tsparticles" options={particlesConfig} />
-
       )}
 
       {/* Left content */}
@@ -52,8 +50,26 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          Hi, I'm PeaceAbu
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">PeaceAbu</span>
         </motion.h1>
+
+        {/* ✅ Subheading with typing effect */}
+        <motion.h2
+          className="text-lg sm:text-xl md:text-3xl font-medium text-pink-400"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <Typewriter
+            words={['Software Developer', 'Web Developer', 'Debugger']}
+            loop={0} // or use Infinity for endless loop
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </motion.h2>
 
         <motion.p
           className="max-w-xl mx-auto md:mx-0 text-sm sm:text-base md:text-xl"
@@ -67,9 +83,9 @@ export default function Hero() {
         <motion.a
           href="#projects"
           className="
-            inline-block bg-black text-indigo-700 font-semibold
+            inline-block bg-black text-indigo-100 font-semibold
             px-4 sm:px-8 py-2 sm:py-3 rounded-lg shadow-lg
-            hover:bg-indigo-100 transition
+            hover:bg-indigo-100 hover:text-indigo-700 transition
             text-xs sm:text-sm md:text-base
           "
           initial={{ scale: 0.8, opacity: 0 }}
@@ -128,7 +144,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
-        <a href="#projects" aria-label="Scroll down to projects">
+        <a href="#AboutMe" aria-label="Scroll down to projects">
           <FaArrowDown />
         </a>
       </motion.div>
