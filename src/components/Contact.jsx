@@ -80,14 +80,14 @@ function Contact() {
       label: 'Full Name',
       type: 'text',
       icon: User,
-      placeholder: 'John Doe'
+      placeholder: 'Abdul Malik Abu'
     },
     {
       name: 'email',
       label: 'Email Address',
       type: 'email',
       icon: Mail,
-      placeholder: 'john@example.com'
+      placeholder: 'peaceabu@pps.com'
     }
   ];
 
