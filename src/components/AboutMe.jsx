@@ -155,7 +155,7 @@ function AboutMe() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Salam 👋 I'm Abu – part-time code wizard, full-time debugger, and accidental Stack Overflow contributor. With over <span className="font-bold text-yellow-500">{experience}+</span> years of experience, I've been shipping snappy, sleek, and occasionally bug-free web applications.
+              Salam! 👋 I'm Abu – part-time code wizard, full-time bug hunter, and a coffee-fueled web developer. With over <span className="font-bold text-yellow-500">{experience}+</span> years of experience, I deliver snappy, sleek, and occasionally bug-free web applications. 😅
             </motion.p>
 
             {/* <motion.p
