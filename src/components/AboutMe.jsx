@@ -53,8 +53,8 @@ function AboutMe() {
     frontend: [
       { icon: FaReact, title: "React", color: "hover:text-blue-400" },
       { icon: FaJs, title: "JavaScript", color: "hover:text-yellow-300" },
-      { icon: FaHtml5, title: "HTML5", color: "hover:text-orange-400" },
-      { icon: FaCss3Alt, title: "CSS3", color: "hover:text-blue-300" },
+      // { icon: FaHtml5, title: "HTML5", color: "hover:text-orange-400" },
+      // { icon: FaCss3Alt, title: "CSS3", color: "hover:text-blue-300" },
       { icon: SiTailwindcss, title: "Tailwind CSS", color: "hover:text-cyan-400" },
     ],
     backend: [
@@ -155,17 +155,17 @@ function AboutMe() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Salam 👋 I'm Abu – part-time code wizard, full-time debugger, and accidental Stack Overflow contributor. With over <span className="font-bold text-purple-200">{experience}+</span> years of experience, I've been shipping snappy, sleek, and occasionally bug-free web applications.
+              Salam 👋 I'm Abu – part-time code wizard, full-time debugger, and accidental Stack Overflow contributor. With over <span className="font-bold text-yellow-500">{experience}+</span> years of experience, I've been shipping snappy, sleek, and occasionally bug-free web applications.
             </motion.p>
 
-            <motion.p
+            {/* <motion.p
               className="text-xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               I specialize in turning wild ideas into working code – faster than you can say "npm install". Whether it's React, Django, or just fixing that "one last bug" (that breaks everything), I'm here for it.
-            </motion.p>
+            </motion.p> */}
 
             <motion.p
               className="text-xl leading-relaxed"
@@ -194,7 +194,7 @@ function AboutMe() {
             >
               <div className="text-center">
                 <motion.p
-                  className="text-5xl font-black text-yellow-400 mb-2"
+                  className="text-5xl font-black text-yellow-300 mb-2"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -214,7 +214,7 @@ function AboutMe() {
             >
               <div className="text-center">
                 <motion.p
-                  className="text-5xl font-black text-teal-300 mb-2"
+                  className="text-5xl font-black text-yellow-300 mb-2"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: 1 }}

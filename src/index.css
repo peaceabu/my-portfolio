@@ -13,6 +13,19 @@ body {
   padding: 0;
 }
 
+
+/* styles.css or globals.css */
+.bg-loading-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(1, 28, 74, 1) 12%,
+    rgba(4, 37, 94, 1) 36%,
+    rgba(0, 18, 74, 1) 76%
+  );
+}
+
+
+
 .underdog-text {
   font-family: 'Underdog', cursive;
 }
