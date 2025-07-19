@@ -42,7 +42,7 @@ export default function Hero() {
       {/* Left Content */}
       <div className="md:w-1/2 space-y-6 max-w-lg z-10">
         <motion.h1
-          className="text-xl sm:text-2xl md:text-6xl font-extrabold"
+          className="text-4xl sm:text-xl md:text-6xl font-extrabold"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -54,7 +54,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.h2
-          className="text-lg sm:text-xl md:text-3xl font-medium text-pink-400"
+          className="text-2xl sm:text-lg md:text-4xl lg:text-4xl font-medium text-pink-400"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -71,7 +71,7 @@ export default function Hero() {
         </motion.h2>
 
         <motion.p
-          className="max-w-xl mx-auto md:mx-0 text-sm sm:text-base md:text-xl"
+          className="max-w-xl mx-auto md:mx-0 text-md sm:text-base md:text-xl"
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -85,7 +85,7 @@ export default function Hero() {
             inline-block bg-black text-indigo-100 font-semibold
             px-4 sm:px-8 py-2 sm:py-3 rounded-lg shadow-lg
             hover:bg-indigo-100 hover:text-indigo-700 transition
-            text-xs sm:text-sm md:text-base
+            text-md sm:text-sm md:text-base
           "
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}

@@ -126,7 +126,7 @@ function AboutMe() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-6xl md:text-7xl font-black tracking-tight mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent"
+            className="text-4xl md:text-4xl font-black tracking-tight mb-6 bg-gradient-to-r from-white via-purple-100 to-cyan-200 bg-clip-text text-transparent"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -150,7 +150,7 @@ function AboutMe() {
         >
           <div className="space-y-6">
             <motion.p
-              className="text-xl leading-relaxed"
+              className="text-lg leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -168,7 +168,7 @@ function AboutMe() {
             </motion.p> */}
 
             <motion.p
-              className="text-xl leading-relaxed"
+              className="text-lg leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
@@ -178,53 +178,53 @@ function AboutMe() {
           </div>
 
           {/* Stats Cards */}
-          <motion.div
-            ref={ref}
-            className="grid grid-cols-1 gap-8"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <motion.div
-              className="bg-gradient-to-br from-white/10 to-white/5 p-8 rounded-2xl shadow-2xl backdrop-blur-sm border border-white/10 hover:border-purple-300/50 transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <div className="text-center">
-                <motion.p
-                  className="text-5xl font-black text-yellow-300 mb-2"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                >
-                  {experience}+
-                </motion.p>
-                <p className="text-lg font-medium">Years Experience</p>
-              </div>
-            </motion.div>
+  <motion.div
+  ref={ref}
+  className="flex justify-center"
+  initial={{ opacity: 0, x: 50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+>
+  <motion.div
+    className="bg-gradient-to-br from-white/10 to-white/5 p-8 rounded-2xl shadow-2xl backdrop-blur-sm border border-white/10 hover:border-purple-300/50 transition-all duration-300 w-full max-w-xl"
+    whileHover={{ scale: 1.03, y: -5 }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.6 }}
+  >
+    <div className="flex flex-col sm:flex-row justify-around items-center text-center gap-8 sm:gap-0">
+      {/* Experience */}
+      <div className="flex-1">
+        <motion.p
+          className="text-4xl font-black text-yellow-400 mb-1"
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          {experience}+
+        </motion.p>
+        <p className="text-lg font-medium">Years Experience</p>
+      </div>
 
-            <motion.div
-              className="bg-gradient-to-br from-white/10 to-white/5 p-8 rounded-2xl shadow-2xl backdrop-blur-sm border border-white/10 hover:border-purple-300/50 transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <div className="text-center">
-                <motion.p
-                  className="text-5xl font-black text-yellow-300 mb-2"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1 }}
-                >
-                  {projects}+
-                </motion.p>
-                <p className="text-lg font-medium">Projects Completed</p>
-              </div>
-            </motion.div>
-          </motion.div>
+      {/* Divider */}
+      <div className="hidden sm:block w-px h-16 bg-white/10 mx-4" />
+
+      {/* Projects */}
+      <div className="flex-1">
+        <motion.p
+          className="text-4xl font-black text-yellow-400 mb-1"
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
+          {projects}+
+        </motion.p>
+        <p className="text-lg font-medium">Projects Completed</p>
+      </div>
+    </div>
+  </motion.div>
+</motion.div>
+
         </motion.div>
 
         {/* Tech Stack Section */}
