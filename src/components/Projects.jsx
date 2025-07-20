@@ -33,7 +33,7 @@ const projects = [
     title: 'TurfKart',
     description: 'Book your favorite turf in just a few clicks. Sporty, smooth, and super chill to use!',
     link: 'https://turfkart.netlify.app',
-    img: '/images/turfkart.png',
+    img: '/images/turfkart.jpeg',
     tech: ['ReactJS']
   },
   {
