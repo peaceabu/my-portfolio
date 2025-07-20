@@ -20,7 +20,7 @@ function Home() {
     <div className="min-h-screen flex items-center justify-center bg-loading-gradient">
       <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
         <Typewriter
-          words={['Salam!']}
+          words={['Salam !']}
           loop={0}
           cursor
           cursorStyle="|"
