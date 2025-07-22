@@ -32,7 +32,7 @@ const projects = [
    {
     title: 'Nalan',
     description: 'Test Blood with ease in your Home - Tenkasi!',
-    link: 'https://nalan.netlify.app ',
+    link: 'https://nalantsi.netlify.app ',
     img: '/images/nalan.jpeg',
     tech: ['ReactJS']
   },
