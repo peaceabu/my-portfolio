@@ -50,13 +50,13 @@ const projects = [
     img: '/images/akhidawah.png',
     tech: ['ReactJS', 'Firebase']
   },
-  {
-    title: 'TicketTimer',
-    description: 'Track tasks like a boss with this minimal ticket timer. Stay sharp, stay on time!',
-    link: 'https://tickettimer.netlify.app',
-    img: '/images/tickettimer.png',
-    tech: ['ReactJS', 'Python']
-  },
+  // {
+  //   title: 'TicketTimer',
+  //   description: 'Track tasks like a boss with this minimal ticket timer. Stay sharp, stay on time!',
+  //   link: 'https://tickettimer.netlify.app',
+  //   img: '/images/tickettimer.png',
+  //   tech: ['ReactJS', 'Python']
+  // },
   {
     title: 'IwayShopper',
     description: 'Full-blown e-commerce site, built from scratch. Shop smart with pro-level polish!',
