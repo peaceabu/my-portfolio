@@ -29,6 +29,13 @@ const projects = [
     img: '/images/kalvizone.png',
     tech: ['ReactJS', 'Python']
   },
+   {
+    title: 'Nalan',
+    description: 'Test Blood with ease in your Home - Tenkasi!',
+    link: 'https://nalan.netlify.app ',
+    img: '/images/nalan.jpeg',
+    tech: ['ReactJS']
+  },
   {
     title: 'TurfKart',
     description: 'Book your favorite turf in just a few clicks. Sporty, smooth, and super chill to use!',
