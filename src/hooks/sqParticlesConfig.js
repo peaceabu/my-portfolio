@@ -47,14 +47,14 @@ const particlesConfig = {
         duration: 0.2,
         factor: 100,
         speed: 1,
-        maxSpeed: 30,
+        maxSpeed: 20,
         easing: 'ease-out-quad'
       }
     }
   },
   particles: {
     number: {
-      value: 10,
+      value: 1,
       density: {
         enable: true,
         width: 1920,
@@ -87,10 +87,10 @@ const particlesConfig = {
       }
     },
     size: {
-      value: { min: 1, max: 10 },
+      value: { min: 1, max: 1  },
       animation: {
         enable: true,
-        speed: 20,
+        speed: 10,
         sync: false,
         startValue: 'random'
       }

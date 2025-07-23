@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import Tilt from 'react-parallax-tilt'; // ✅ Add this import
 import particlesConfig from '../hooks/particlesConfig';
+import { Helmet } from 'react-helmet';
 
 export default function Hero() {
   const [init, setInit] = useState(false);
@@ -36,6 +37,28 @@ export default function Hero() {
           'radial-gradient(circle,rgba(1, 28, 74, 1) 12%, rgba(4, 37, 94, 1) 36%, rgba(0, 18, 74, 1) 76%)',
       }}
     >
+
+           {/* 🔹 Helmet for SEO */}
+      <Helmet>
+        <title>PeaceAbu | Web Developer</title>
+        <meta
+        name="description"
+        content="I'm Peace Abu, a freelance web developer based in Tenkasi. I create fast, accessible, and modern web apps using React for local and remote clients."/>
+        <meta name="author" content="Peace Abu" />
+        
+        <meta 
+  name="keywords" 
+  content="Peace Abu, PeaceAbu, peaceabu, freelance web developer, React developer, frontend developer, frontend engineer, web developer in Tenkasi, React developer in Tenkasi, Peace Abu portfolio, modern web apps, JavaScript developer, remote React developer, accessible web apps, fast websites, responsive design, UI developer"
+/>
+
+        <meta property="og:title" content="PeaceAbu | Developer Portfolio" />
+        <meta property="og:description" content="Web developer building beautiful and fast applications using React." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+        <meta property="og:url" content="https://peaceabu.site" />
+        <link rel="canonical" href="https://peaceabu.site.com" />
+      </Helmet>
+
       {/* 🔵 Particles Background */}
       {init && <Particles id="tsparticles" options={particlesConfig} />}
 
@@ -60,24 +83,30 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <Typewriter
-            words={['Software Developer', 'Web Developer', 'Debugger']}
+            words={['Software', 'Web', 'Freelance']}
             loop={0}
             cursor
-            cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={50}
+            cursorStyle=""
+            typeSpeed={100}
+            deleteSpeed={100}
             delaySpeed={1000}
-          />
+          /> Developer
+          <span className="text-white"></span>
         </motion.h2>
 
-        <motion.p
-          className="max-w-xl mx-auto md:mx-0 text-md sm:text-base md:text-xl"
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          I build beautiful, fastest, and accessible web applications using React and modern technologies.
-        </motion.p>
+<motion.p
+  className="max-w-xl mx-auto md:mx-0 text-md sm:text-base md:text-xl font-sans"
+  initial={{ y: 40, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.3 }}
+>
+   <br />
+  Freelance web developer in <strong>Tenkasi</strong>.<br />
+  I build fast, accessible, and beautiful web apps with React, working on local and remote projects.
+</motion.p>
+
+
+
 
         <motion.a
           href="#projects"
@@ -95,7 +124,7 @@ export default function Hero() {
         </motion.a>
 
         <motion.div
-          className="flex justify-center md:justify-start space-x-6 mt-6 text-2xl"
+          className="flex justify-center md:justify-start space-x-6 mt-4 text-2xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -142,9 +171,9 @@ export default function Hero() {
       {/* Scroll Down Arrow */}
       <motion.div
         className="
-          absolute bottom-6
+          absolute bottom-2
           left-1/2 transform -translate-x-1/2
-          animate-bounce text-white text-3xl sm:text-4xl z-10
+          animate-bounce text-white text-xl sm:text-4xl z-10
         "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

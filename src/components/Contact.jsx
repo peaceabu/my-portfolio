@@ -94,7 +94,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-10 px-2 sm:px-4 lg:px-8 bg-[radial-gradient(circle,rgba(1,28,74,1)_12%,rgba(4,37,94,1)_36%,rgba(0,18,74,1)_76%)] overflow-hidden"
+      className="min-h-screen flex items-center justify-center py-20 px-2 sm:px-4 lg:px-8 bg-[radial-gradient(circle,rgba(1,28,74,1)_12%,rgba(4,37,94,1)_36%,rgba(0,18,74,1)_76%)] overflow-hidden"
     >
       <div className="w-full max-w-3xl md:max-w-4xl lg:max-w-6xl bg-transparent grid gap-10 md:gap-16 md:grid-cols-2 items-center">
         {/* Left - Info */}
