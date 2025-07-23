@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { BiDownload } from 'react-icons/bi';
+import { span } from 'framer-motion/client';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,10 +13,16 @@ function Navbar() {
     { label: 'About', target: 'AboutMe' },
     { label: 'Projects', target: 'projects' },
     { label: 'Contact', target: 'contact' },
-    { label: 'Resume', path: '/doc/AbuRes_030225.pdf' }
-  ];
+{
+  label: (
+    <span className="flex items-center gap-2">
+      Resume <BiDownload />
+    </span>
+  ),
+  path: '/doc/AbuRes_030225.pdf'
+}
 
-  const navItemClass = "relative hover:text-pink-400 transition duration-300";
+  ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -53,12 +61,7 @@ function Navbar() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10 shadow-sm"
-      >
+      <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
           <div className="text-2xl font-bold tracking-wide">PeaceAbu</div>
 
@@ -73,28 +76,20 @@ function Navbar() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
                   className="relative px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg font-medium shadow-lg hover:shadow-pink-500/25 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-50"
                 >
-                  <span className="relative z-10">{item.label}</span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-500 rounded-lg opacity-0"
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
+                  {item.label}
                 </motion.a>
               ) : (
                 <button
                   key={item.label}
                   onClick={() => handleScroll(item.target)}
-                  className={`${navItemClass} ${activeSection === item.target ? 'text-pink-400' : ''}`}
+                  className={`relative hover:text-pink-400 transition duration-300 ${
+                    activeSection === item.target ? 'text-pink-400 border-b-2 border-pink-400' : ''
+                  }`}
                 >
                   {item.label}
-                  {activeSection === item.target && (
-                    <motion.span
-                      layoutId="underline"
-                      className="absolute left-0 -bottom-1 h-[2px] w-full bg-pink-400 rounded"
-                    />
-                  )}
                 </button>
               )
             )}
@@ -107,7 +102,7 @@ function Navbar() {
             </button>
           </div>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -129,14 +124,10 @@ function Navbar() {
                   onClick={() => setIsOpen(false)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
                   className="relative px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg font-medium shadow-lg hover:shadow-pink-500/25 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-50"
                 >
-                  <span className="relative z-10">{item.label}</span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-500 rounded-lg opacity-0"
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
+                  {item.label}
                 </motion.a>
               ) : (
                 <button

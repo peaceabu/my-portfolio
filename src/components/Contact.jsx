@@ -111,10 +111,8 @@ function Contact() {
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-[32rem]">
-              I'm always excited to discuss new projects, creative ideas, or opportunities to be part of your vision.
-            </p>
-          </div>
+            
+          </div>  
 
           {/* Social Links */}
           <div>
@@ -160,7 +158,7 @@ function Contact() {
           >
             <div className="mb-6">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Send a Message</h2>
-              <p className="text-blue-200 text-xs sm:text-sm">Tell me about your project or just say hello!</p>
+              {/* <p className="text-blue-200 text-xs sm:text-sm">Tell me about your project or just say hello!</p> */}
             </div>
 
             <div className="space-y-4">

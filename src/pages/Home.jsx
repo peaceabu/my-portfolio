@@ -5,6 +5,8 @@ import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import { Typewriter } from 'react-simple-typewriter';
+import WorkExperience from "../components/WorkExperience";
+
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -37,6 +39,7 @@ function Home() {
     <>
       <Hero />
       <AboutMe />
+      <WorkExperience />
       <Projects />
       <Contact />
       <Footer />

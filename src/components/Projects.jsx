@@ -72,7 +72,7 @@ const projects = [
       id="projects"
       className="relative min-h-screen pt-20 px-6 pb-28 bg-gradient-to-br text-white overflow-hidden"
       style={{
-        background: "linear-gradient(to right,  #000428, #004e92)",
+        background: "linear-gradient(to right,  #004e92, #000428)",
       }}
     >
       {/* 🔵 Particles Background - Lower z-index */}
@@ -87,13 +87,26 @@ const projects = [
       )}
 
       {/* Content Container with higher z-index */}
-      <div className="relative z-10">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
-          Featured Projects
-        </h1>
+      <div className="relative z-10 text-center mb-16">
+        
+        <motion.h1
+            className="text-4xl md:text-4xl font-black tracking-tight mb-6 bg-gradient-to-r from-white via-purple-100 to-cyan-200 bg-clip-text text-transparent"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            My Works
+          </motion.h1>
+          <motion.div
+            className="w-24 h-1 bg-gradient-to-r from-pink-700 to-purple-800 mx-auto rounded-full"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          />
+        
 
         {/* Projects Grid */}
-        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mt-10">
           {projects.map((project, index) => (
             <motion.div
   key={index}
