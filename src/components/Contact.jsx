@@ -9,6 +9,8 @@ import {
   Linkedin,
   ExternalLink,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet';
+
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -19,7 +21,9 @@ function Contact() {
   const [focusedField, setFocusedField] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const experience = 3;
 
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -96,6 +100,29 @@ function Contact() {
       id="contact"
       className="min-h-screen flex items-center justify-center py-20 px-2 sm:px-4 lg:px-8 bg-[radial-gradient(circle,rgba(1,28,74,1)_12%,rgba(4,37,94,1)_36%,rgba(0,18,74,1)_76%)] overflow-hidden"
     >
+
+                <Helmet>
+              <title>Contact | Peace Abu</title>
+              <meta
+                name="description"
+                content={`Learn more about Peace Abu – a passionate, coffee-fueled web developer with ${experience}+ years of experience. I specialize in React and modern frontend tech, building accessible and blazing-fast web apps with a dash of humor.`}
+              />
+              <meta name="author" content="Peace Abu" />
+              <meta
+                name="keywords"
+                content="Peace Abu, PeaceAbu, about Peace Abu, React developer, web developer bio, freelance developer, frontend engineer, web artisan, JavaScript expert, funny developer, developer with personality, Peace Abu web developer, developer in Tenkasi"
+              />
+              <meta property="og:title" content="About | Peace Abu – Web Developer in Tenkasi" />
+              <meta
+                property="og:description"
+                content="Meet Peace Abu – Web designer and Web Developer in Tenkasi"
+              />
+              <meta property="og:type" content="website" />
+              <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+              <meta property="og:url" content="https://peaceabu.site/contact" />
+              <link rel="canonical" href="https://peaceabu.site/contact" />
+            </Helmet>
+
       <div className="w-full max-w-3xl md:max-w-4xl lg:max-w-6xl bg-transparent grid gap-10 md:gap-16 md:grid-cols-2 items-center">
         {/* Left - Info */}
         <div className="space-y-8">
@@ -115,29 +142,7 @@ function Contact() {
           </div>  
 
           {/* Social Links */}
-          <div>
-            <h3 className="text-base font-semibold text-white mb-2">Connect with me</h3>
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`min-w-[120px] flex-1 sm:flex-initial group flex items-center gap-2 px-3 py-3 rounded-xl bg-black/30 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300 hover:bg-black/50 ${social.color}`}
-                  >
-                    <Icon className="w-5 h-5 text-blue-200 group-hover:scale-110 transition-transform duration-300" />
-                    <span className="text-xs font-medium text-blue-100 group-hover:text-white transition-colors">
-                      {social.label}
-                    </span>
-                    <ExternalLink className="w-4 h-4 text-blue-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+ 
 
           {/* Quick Info */}
           <div className="p-4 sm:p-6 rounded-2xl bg-black/20 border border-indigo-500/30">

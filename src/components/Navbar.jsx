@@ -3,10 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { BiDownload } from 'react-icons/bi';
 import { span } from 'framer-motion/client';
+import { Helmet } from 'react-helmet';
+
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const experience = 3;
 
   const navItems = [
     { label: 'Home', target: 'home' },
@@ -61,9 +65,30 @@ function Navbar() {
 
   return (
     <>
+      <Helmet>
+              <title>Navigation | Peace Abu</title>
+              <meta
+                name="description"
+                content={`Learn more about Peace Abu – a passionate, coffee-fueled web developer with ${experience}+ years of experience. I specialize in React and modern frontend tech, building accessible and blazing-fast web apps with a dash of humor.`}
+              />
+              <meta name="author" content="Peace Abu" />
+              <meta
+                name="keywords"
+                content="Peace Abu, PeaceAbu, about Peace Abu, React developer, web developer bio, freelance developer, frontend engineer, web artisan, JavaScript expert, funny developer, developer with personality, Peace Abu web developer, developer in Tenkasi"
+              />
+              <meta property="og:title" content="About | Peace Abu – Web Developer in Tenkasi" />
+              <meta
+                property="og:description"
+                content="Meet Peace Abu – Web designer and Web Developer in Tenkasi"
+              />
+              <meta property="og:type" content="website" />
+              <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+              <meta property="og:url" content="https://peaceabu.site/contact" />
+              <link rel="canonical" href="https://peaceabu.site/contact" />
+            </Helmet>
       <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
-          <div className="text-2xl font-bold tracking-wide">PeaceAbu</div>
+          <div className="text-2xl font-bold tracking-wide">Peace Abu</div>
 
           {/* Desktop Links */}
           <div className="space-x-6 hidden md:flex">

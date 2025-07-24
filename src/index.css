@@ -55,13 +55,15 @@ a:hover {
   background-color: #f9f9f9;
 } */
 
+
+
 body {
-  --cursor-x: 50vw;
-  --cursor-y: 50vh;
+  --cursor-x: 30vw;
+  --cursor-y: 70vh;
   background: radial-gradient(
     circle at var(--cursor-x) var(--cursor-y),
-    rgba(255, 255, 255, 0.1),
-    rgba(0, 0, 0, 0.9)
+    #000428,
+    #004e92
   );
   transition: background 0.05s;
   background-size: cover;

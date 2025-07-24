@@ -40,12 +40,12 @@ const TechStackSection = () => {
       transition={{ duration: 0.8, delay: 0.5 }}
     >
       <motion.h2
-        className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent"
+        className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
-        Technologies I Use
+        Tech I Use
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

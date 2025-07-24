@@ -29,7 +29,7 @@ const particlesConfig = {
       }
     },
     modes: {
-      push: { quantity: 3 },
+      push: { quantity: 1 },
       grab: {
         distance: 150,
         links: {
@@ -54,7 +54,7 @@ const particlesConfig = {
   },
   particles: {
     number: {
-      value: 10,
+      value: 3,
       density: {
         enable: true,
         width: 1920,
@@ -87,7 +87,7 @@ const particlesConfig = {
       }
     },
     size: {
-      value: { min: 1, max: 10 },
+      value: { min: 1, max: 3 },
       animation: {
         enable: true,
         speed: 20,

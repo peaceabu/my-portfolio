@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FaBriefcase, FaCalendarAlt, FaBuilding } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
+
 
 const workData = [
   {
@@ -36,15 +38,41 @@ const workData = [
 const WorkExperience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const experience = 3;
+
 
   return (
     <section
-      id="work"
+      id="timeline"
       className="relative min-h-screen py-20 px-6 text-white flex flex-col justify-center items-center overflow-hidden"
       style={{
         background: 'linear-gradient(to right, #000428, #004e92)'
       }}
     >
+
+            <Helmet>
+        <title>Experience | Peace Abu</title>
+        <meta
+          name="description"
+          content={`Learn more about Peace Abu – a passionate, coffee-fueled web developer with ${experience}+ years of experience. I specialize in React and modern frontend tech, building accessible and blazing-fast web apps with a dash of humor.`}
+        />
+        <meta name="author" content="Peace Abu" />
+        <meta
+          name="keywords"
+          content="Peace Abu, PeaceAbu, about Peace Abu, React developer, web developer bio, freelance developer, frontend engineer, web artisan, JavaScript expert, funny developer, developer with personality, Peace Abu web developer, developer in Tenkasi"
+        />
+        <meta property="og:title" content="About | Peace Abu – Web Developer in Tenkasi" />
+        <meta
+          property="og:description"
+          content="Meet Peace Abu – Web designer and Web Developer in Tenkasi"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+        <meta property="og:url" content="https://peaceabu.site/about" />
+        <link rel="canonical" href="https://peaceabu.site/about" />
+      </Helmet>
+
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 right-10 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl" />
@@ -86,6 +114,7 @@ const WorkExperience = () => {
                 key={index}
                 className={`relative flex items-center ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                
                 } flex-col md:gap-8 gap-4`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -162,26 +191,6 @@ const WorkExperience = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-white/60 text-lg">
-            Ready to add your project to this timeline?
-          </p>
-          <motion.a
-            href="#contact"
-            className="inline-block mt-4 px-8 py-3 bg-gradient-to-r from-pink-700 to-purple-800 text-white rounded-full font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Let's Work Together
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   );

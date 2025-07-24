@@ -47,7 +47,7 @@ function AboutMe() {
       }}
     >
       <Helmet>
-        <title>About | PeaceAbu</title>
+        <title>About | Peace Abu</title>
         <meta
           name="description"
           content={`Learn more about Peace Abu – a passionate, coffee-fueled web developer with ${experience}+ years of experience. I specialize in React and modern frontend tech, building accessible and blazing-fast web apps with a dash of humor.`}
@@ -60,7 +60,7 @@ function AboutMe() {
         <meta property="og:title" content="About | Peace Abu – Web Developer in Tenkasi" />
         <meta
           property="og:description"
-          content="Meet Peace Abu – bug hunter, meme-loving developer, and expert in crafting sleek, modern web applications with React."
+          content="Meet Peace Abu – Web designer and Web Developer in Tenkasi"
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
@@ -101,11 +101,11 @@ function AboutMe() {
         >
           <div className="space-y-6">
             <p className="text-lg leading-relaxed">
-              Salam! 👋 I'm Abu – part-time code wizard, full-time bug hunter, and a coffee-fueled web developer. With over <span className="font-bold text-yellow-500">{experience}+</span> years of experience, I deliver snappy, sleek, and occasionally bug-free web applications. 😅
+              Salam! 👋 I'm Peace Abu – Tenkasi-based web developer with a strong drive for crafting sleek, responsive, and high-performance web experiences.
             </p>
 
             <p className="text-lg leading-relaxed">
-              I believe clean code is like clean biryani – organized, flavorful, and leaves no regrets. Hit me up if you need a dev who codes like he's making memes – expressive, slightly chaotic, but always on point.
+               My work encompasses everything from precision bug fixing to end-to-end full-stack application development. I am deeply committed to clean code practices, ensuring optimal performance, and delivering real-world usability that shines across all devices
             </p>
           </div>
 

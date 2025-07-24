@@ -4,10 +4,12 @@ import { FaArrowDown } from "react-icons/fa";
 import { useCallback, useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
+import { Helmet } from "react-helmet";
+
 
 function Projects() {
   const [init, setInit] = useState(false);
-
+  const experience = 3;
   // Initialize particles engine
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -75,6 +77,29 @@ const projects = [
         background: "linear-gradient(to right,  #004e92, #000428)",
       }}
     >
+
+            <Helmet>
+              <title>Projects | PeaceAbu</title>
+              <meta
+                name="description"
+                content={`Learn more about Peace Abu – a passionate, coffee-fueled web developer with ${experience}+ years of experience. I specialize in React and modern frontend tech, building accessible and blazing-fast web apps with a dash of humor.`}
+              />
+              <meta name="author" content="Peace Abu" />
+              <meta
+                name="keywords"
+                content="Peace Abu, PeaceAbu, about Peace Abu, React developer, web developer bio, freelance developer, frontend engineer, web artisan, JavaScript expert, funny developer, developer with personality, Peace Abu web developer, developer in Tenkasi"
+              />
+              <meta property="og:title" content="Projects | Peace Abu – Web Developer in Tenkasi" />
+              <meta
+                property="og:description"
+                content="Meet Peace Abu – Web designer and Web Developer in Tenkasi"
+              />
+              <meta property="og:type" content="website" />
+              <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+              <meta property="og:url" content="https://peaceabu.site/projects" />
+              <link rel="canonical" href="https://peaceabu.site/projects" />
+            </Helmet>
+
       {/* 🔵 Particles Background - Lower z-index */}
       {init && (
         <div className="absolute inset-0 z-0">
@@ -157,6 +182,28 @@ const projects = [
           ))}
         </div>
       </div>
+
+      
+        {/* Bottom Section */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-white/60 text-lg">
+            Ready to add your project to this timeline?
+          </p>
+          <motion.a
+            href="#contact"
+            className="inline-block mt-4 px-8 py-3 bg-gradient-to-r from-pink-700 to-purple-800 text-white rounded-full font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Let's Work Together
+          </motion.a>
+        </motion.div>
 
       {/* Scroll to AboutMe Arrow */}
       <motion.div
