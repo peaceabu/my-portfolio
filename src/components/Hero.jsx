@@ -91,7 +91,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <br />
-          Freelance Web designer & Web developer in <strong>Tenkasi</strong>.<br />
+          Freelance Web designer & Web developer based in <strong>Tenkasi</strong>.<br />
           I build fast, accessible, and beautiful web apps with React, working on local and remote projects.
         </motion.p>
 
@@ -138,7 +138,7 @@ export default function Hero() {
           <img
             src="/myself_favicon.png"
             alt="PeaceAbu"
-            className="w-48 sm:w-64 md:w-80 lg:w-96 max-w-full h-auto object-cover shadow-lg"
+            className="w-55 sm:w-70 md:w-80 lg:w-96 max-w-full h-auto object-cover shadow-lg"
             style={{
               borderRadius: '30% 50% 70% 30% / 60% 30% 70% 40%',
             }}
