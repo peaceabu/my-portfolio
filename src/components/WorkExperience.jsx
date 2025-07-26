@@ -12,8 +12,8 @@ const workData = [
     duration: "Nov 2024 - Present ",
     type: "Full-time",
     description:
-      "Leading the UI development using React and Tailwind CSS. Built and maintained scalable design systems, optimized performance, and mentored junior devs.",
-    skills: ["React", "Tailwind CSS", "TypeScript", "Design Systems"]
+      "Developing Tools to Automate Design Process to Increase Efficiency and Reduce Errors using C# and Revit API",
+    skills: ["C#", "Revit API", "Python"]
   },
   {
     company: "Mel Systems $ Services",
@@ -22,7 +22,7 @@ const workData = [
     type: "Full-time",
     description:
       "Worked across frontend and backend using React and Django. Built pixel-perfect UIs and managed RESTful APIs for client dashboards.",
-    skills: ["React", "Django", "REST APIs", "PostgreSQL"]
+    skills: ["JavaScript", "Django", "REST APIs", "MongoDB"]
   },
   {
     company: "Freelance",
@@ -30,8 +30,8 @@ const workData = [
     duration: "2023 - Present",
     type: "Part-time ",
     description:
-      "Worked with global clients to develop custom web applications. Specialized in single-page apps, responsive designs, and quick delivery.",
-    skills: ["JavaScript", "Vue.js", "Node.js", "MongoDB"]
+      "Worked with clients to develop web applications. Specialized in single-page apps, responsive designs, and quick delivery.",
+    skills: ["Tailwind", "ReactJS", "Node.js", "MongoDB"]
   },
 ];
 
@@ -67,7 +67,7 @@ const WorkExperience = () => {
           content="Meet Peace Abu – Web designer and Web Developer in Tenkasi"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+        <meta property="og:image" content="https://peaceabu.site/myself_favicon.webp" />
         <meta property="og:url" content="https://peaceabu.site/about" />
         <link rel="canonical" href="https://peaceabu.site/about" />
       </Helmet>

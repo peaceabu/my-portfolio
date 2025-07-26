@@ -63,7 +63,7 @@ function AboutMe() {
           content="Meet Peace Abu – Web designer and Web Developer in Tenkasi"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+        <meta property="og:image" content="https://peaceabu.site/myself_favicon.webp" />
         <meta property="og:url" content="https://peaceabu.site/about" />
         <link rel="canonical" href="https://peaceabu.site/about" />
       </Helmet>

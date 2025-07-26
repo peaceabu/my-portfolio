@@ -28,28 +28,28 @@ const projects = [
     title: 'KalviZone',
     description: 'Find the perfect college based on your Cut-Off. Smart, sleek, and regional-wise search made easy!',
     link: 'https://kalvizone.site',
-    img: '/images/kalvizone.png',
+    img: '/images/kalvizone.webp',
     tech: ['ReactJS', 'Python']
   },
    {
     title: 'Nalan',
     description: 'Test Blood with ease in your Home - Tenkasi!',
     link: 'https://nalantsi.netlify.app ',
-    img: '/images/nalan.jpeg',
+    img: '/images/nalan.webp',
     tech: ['ReactJS']
   },
   {
     title: 'TurfKart',
     description: 'Book your favorite turf in just a few clicks. Sporty, smooth, and super chill to use!',
     link: 'https://turfkart.netlify.app',
-    img: '/images/turfkart.jpeg',
+    img: '/images/turfkart.webp',
     tech: ['ReactJS']
   },
   {
     title: 'AkhiDawah',
     description: 'Learn Islam the modern way. Clean UI, rich content, and a strong community vibe!',
     link: 'https://akhidawah.netlify.app',
-    img: '/images/akhidawah.png',
+    img: '/images/akhidawah.webp',
     tech: ['ReactJS', 'Firebase']
   },
   // {
@@ -63,7 +63,7 @@ const projects = [
     title: 'IwayShopper',
     description: 'Full-blown e-commerce site, built from scratch. Shop smart with pro-level polish!',
     link: 'https://iwayshopper.in',
-    img: '/images/iwayshopper_png.png',
+    img: '/images/iwayshopper_png.webp',
     tech: ['Wordpress','Payment']
   },
 ];
@@ -95,7 +95,7 @@ const projects = [
                 content="Meet Peace Abu – Web designer and Web Developer in Tenkasi"
               />
               <meta property="og:type" content="website" />
-              <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+              <meta property="og:image" content="https://peaceabu.site/myself_favicon.webp" />
               <meta property="og:url" content="https://peaceabu.site/projects" />
               <link rel="canonical" href="https://peaceabu.site/projects" />
             </Helmet>

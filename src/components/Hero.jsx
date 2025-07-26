@@ -45,7 +45,7 @@ export default function Hero() {
         <meta property="og:title" content="Portfolio | Peace Abu – Web Developer in Tenkasi" />
         <meta property="og:description" content="Meet Peace Abu – Web designer and Web Developer in Tenkasi" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://peaceabu.site/myself_favicon.png" />
+        <meta property="og:image" content="https://peaceabu.site/myself_favicon.webp" />
         <meta property="og:url" content="https://peaceabu.site" />
         <link rel="canonical" href="https://peaceabu.site.com" />
       </Helmet>
@@ -55,7 +55,7 @@ export default function Hero() {
       {/* Left Content */}
       <div className="w-full md:w-1/2 space-y-6 max-w-md lg:max-w-lg z-10">
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold "
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -136,7 +136,7 @@ export default function Hero() {
           className="w-fit"
         >
           <img
-            src="/myself_favicon.png"
+            src="/myself_favicon.webp"
             alt="PeaceAbu"
             className="w-55 sm:w-70 md:w-80 lg:w-96 max-w-full h-auto object-cover shadow-lg"
             style={{
