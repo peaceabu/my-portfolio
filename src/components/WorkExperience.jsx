@@ -51,7 +51,7 @@ const WorkExperience = () => {
     >
 
             <Helmet>
-        <title>Experience | Peace Abu</title>
+        <title>Peace Abu | Experience</title>
         <meta
           name="description"
           content={`Learn more about Peace Abu – a passionate, coffee-fueled web developer with ${experience}+ years of experience. I specialize in React and modern frontend tech, building accessible and blazing-fast web apps with a dash of humor.`}

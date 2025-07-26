@@ -38,6 +38,26 @@ export default function Hero() {
       }}
     >
       <Helmet>
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Peace Abu",
+          "url": "https://peaceabu.site",
+          "image": "https://peaceabu.site/myself_favicon.webp",
+         "description": "Peace Abu is a web developer building fast, accessible websites and web apps based in Tenkasi.",
+          "sameAs": [
+            "https://github.com/peaceabu",
+            "https://linkedin.com/in/abupps"
+          ],
+          "jobTitle": "Software Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance"
+          }
+        })}
+        </script>
+
         <title>Peace Abu | Web Developer</title>
         <meta name="description" content="I'm Peace Abu, a freelance web developer based in Tenkasi. I create fast, accessible, and modern web apps using React for local and remote clients." />
         <meta name="author" content="Peace Abu" />
@@ -47,7 +67,7 @@ export default function Hero() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://peaceabu.site/myself_favicon.webp" />
         <meta property="og:url" content="https://peaceabu.site" />
-        <link rel="canonical" href="https://peaceabu.site.com" />
+        <link rel="canonical" href="https://peaceabu.site" />
       </Helmet>
 
       {init && <Particles id="tsparticles" options={particlesConfig} />}

@@ -7,6 +7,7 @@ import {
   FaFacebook
 } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -23,7 +24,7 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto grid gap-12 md:grid-cols-3 text-center md:text-left">
         {/* Brand Info */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">PeaceAbu</h2>
+          <h2 className="text-2xl font-bold mb-4">Peace Abu</h2>
           <p className="text-sm text-white/60">
             Web developer & designer based in Tenkasi, helping local and global clients turn ideas into pixel-perfect digital experiences.
           </p>
@@ -32,21 +33,18 @@ export default function Footer() {
         {/* Navigation Links */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Navigate</h3>
-          <ul className="space-y-2 text-white/80 text-sm">
-            {['home', 'about', 'projects','timeline','contact'].map((section) => (
-              <li key={section}>
-                <ScrollLink
-                  to={section}
-                  smooth={true}
-                  duration={500}
-                  offset={-80}
-                  className="hover:text-white cursor-pointer transition-colors duration-200 inline-block"
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </ScrollLink>
-              </li>
-            ))}
-          </ul>
+      <ul className="space-y-2 text-white/50 text-sm">
+  {['/', '/about', '/projects', '/timeline', '/contact'].map((path, i) => (
+    <li key={path}>
+      <Link
+        to={path}
+        className="hover:text-white cursor-pointer transition-colors duration-200 inline-block"
+      >
+        {['Home', 'About', 'Projects', 'Timeline', 'Contact'][i]}
+      </Link>
+    </li>
+  ))}
+</ul>
         </div>
 
         {/* Social Media */}
@@ -75,9 +73,19 @@ export default function Footer() {
       </div>
 
       {/* Bottom Note */}
-      <div className="relative z-10 border-t border-white/20 mt-10 pt-4 text-sm text-white/60 text-center">
-        &copy; {new Date().getFullYear()} PeaceAbu. All rights reserved.
-      </div>
+      <div className="relative z-10 border-t border-white/20 mt-10 pt-4 text-sm text-white/50 text-center">
+  &copy; {new Date().getFullYear()}{' '}
+  <a
+    href="https://peaceabu.site"
+    className="text-white/80 hover:text-white transition-colors duration-200"
+    target="_self" // Or "_blank" if you want it to open in new tab
+    rel="noopener noreferrer"
+  >
+    PeaceAbu
+  </a>
+  . All rights reserved.
+</div>
+
     </motion.footer>
   );
 }
